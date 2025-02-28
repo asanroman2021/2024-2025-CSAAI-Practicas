@@ -8,45 +8,90 @@
 
    <!-- Hoja de estilo -->
    <link rel="stylesheet" href="2c-template.css">    
-   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 </head>
 <body>
     
-    <h2>Diseño de plantilla a dos columnas</h2>
-
+    <h2>Practica 1: Diseño de cv</h2>
     <div class="fila">
-      <div id="c1" class="columna izquierda">
-        <h2>Columna Izquierda</h2>
+    <div id="c1" class="columna izquierda">
 
-        <div class="iresponsive">
-            <img id="imghtml" src="html5.png" alt="html5" width="200" height="200">
-        </div>
+        <h2 style="text-align:center;">Mi perfil</h2>
+        <div style="text-align: center;" class="responsive"></div>
+        <img id="img" src="Archivos/Lebron.webp" alt="Juanito" width="175" height="175"
+            style="border-radius : 60%;">
 
-        <div class="iresponsive">
-            <img id="imgcss" src="css.png" alt="css" width="200" height="200">
-        </div>
+        <p style ="text-align:justify;">Nacido en el Puero de Santa Maria, Cadiz, el 30 de Enero de 1995
+             y siempre son el sueño presente de llegar a ser el mejor. </p>
+        <hr>
+        <p style ="text-align:justify;">Jugador de padel profesional desde 2013, siendo en 2019 el primer jugador español en ser número 1 del mundo junto a Paquito Navarro, su pareja,
+            al año siguiente decidio cambiar de paerja y juntarse con Alejandro Galán, con el cual ha llegado a ser número 1 hasta 4 años seguidos, consolidandose como dos de los mejores jugadores de la historia </p>
 
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
-        </p>
+        <hr>
+        <h3 style="text-align:center;">Desarrollo en la pista</h3>
+            <ul class="competencias">
+                <li class="competencia">
+                    <span>Volea</span>
+                    <div class="barra-progreso">
+                        <div class="nivel" style="width: 80%;"></div>
+                    </div>
+                    <div class="texto-nivel">80%</div>
+                </li>
+                <li class="competencia">
+                    <span>Defensa</span>
+                    <div class="barra-progreso">
+                        <div class="nivel" style="width: 90%;"></div>
+                    </div>
+                    <div class="texto-nivel">90%</div>
+                </li>
+                <li class="competencia">
+                    <span>Remate</span>
+                    <div class="barra-progreso">
+                        <div class="nivel" style="width: 100%;"></div>
+                    </div>
+                    <div class="texto-nivel">100%</div>
+                </li>        
+            </ul>
+        <hr>
+
+        <h3 style="text-align: center;"><a href="about.html">Pagina personal</a></h3>        
         <ul>
-            <li>Contacto</li>
-            <li>Formación</li>
-            <li>Experiencia</li>
-            <li>Acerca de</li>
+          <li>Correo:</li>  
+          <li>juanitoellobo@soyelmejor.es</li>
+          <li>Direccion:</li>
+          <li> Av. De vuelta, 72, Chiclana, 11130 Cadiz</li>
+          <li>Telefono:</li>
+          <li>621213340</li>
         </ul>
-      </div>
-      <div id="c2" class="columna derecha">
-        <h2>Columna Derecha</h2>
-        <img src="web-tech.png" alt="Tecnologías web">
-        <p>Senserit mediocrem vis ex, et dicunt deleniti gubergren mei. Mel id clita mollis repudiare. 
-            Sed ad nostro delicatissimi, postea pertinax est an. Adhuc sensibus percipitur sed te, 
-            eirmod tritani debitis nec ea. Cu vis quis gubergren.
-        </p>
-      </div>
     </div>
+    
+
+
+    <div id="c2" class="columna derecha ">
+        <h1>Juan Lebron</h1>
+        <img src="Archivos/Remate.webp" alt="JuanitoRematando" >
+
+        <h3>Formación</h3>
+        <ul class="square-list ">
+                <li>1994: Curso de cocina en Suiza</li>
+                <li>1987-1989: Escuela Superior de Hosteleria y Turismo de Madrid</li>
+        </ul>
+
+
+        <hr>
+
+        <h3>Mis parejas durante estos años</h3> 
+        <ul class="square-list">
+            <li>2013, comienzo con  Martín Sánchez Piñeiro</li>
+            <li>2016, continuo con Gabi Reca</li>           
+            <li>2017, empezó la temporada con Marcello Jardim y la terminó con Adrián Allemandi.</li>
+            <li >2018, inicio de temporada con Juan Cruz Belluati, y fin de ella con Juan Marín Díaz, considerado por muchos el mejor de la historia </li>
+            <li>2019, Paquito Navarro, primera vez numero 1 del mundo</li>
+            <li>2020-2024, Alejandro Galán, 4 años seguidos numeros uno del mundo</li>
+        </ul> 
+        </div>      
+    </div>
+
 
 </body>
 </html>

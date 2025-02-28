@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Pacifico&display=swap');
+
+*{
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    font-family: 'Helvetica';
+    background-color: #178665;
+    text-align: center;
+    padding: 10px;
+}
+h2{
+    font-family: 'Anton' ;
+}
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: larger;
+    background-color: #f4f4f465;
+    color: rgb(75, 75, 75);
+    margin: 0;
+    padding: 0;
+}
+table {
+    max-width: 3%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #1dada1;
+    border-radius: 4px;
+    box-shadow: 0 0 100px rgba(4, 161, 96, 0.692);
+    font-family: arial;
+    text-align: center;
+    font-size: larger;
+    color: rgb(248, 245, 245);
+    border-collapse: collapse;
+}
+
+
+#contenido {
+    max-width: 900px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color:  #ffffff;
+    border-radius: 5px;
+    box-shadow: 20px 10px 10px rgba(0, 255, 200, 0.555);
+}
+
+img {
+    max-width: 100%;
+    height: 300px;
+}
+
+.boton {
+    max-width: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: #1dada1;
+    border-radius: 15px;
+    font-family: 'Pacifico';
+    text-align: center;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+
+}
+
+.boton2{
+    max-width: auto;
+    margin: auto;
+    padding: 10px;
+    background-color: #30c5a080;
+    border-radius: 15px;
+    font-family: 'Anton';
+    text-align: center;
+    font-size: larger;
+    color: rgb(255, 255, 255);
+
+}
+
+@media screen and (max-width: 600px) {
+    .audio-table-container {
+        overflow-x: auto; /* Enable horizontal scrolling on small screens */
+        max-width: 100%; /* Ensure the table doesn't exceed the width of its container */
+    }
+
+
+
+  }
