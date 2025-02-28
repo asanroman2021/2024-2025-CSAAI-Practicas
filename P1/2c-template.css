@@ -1,6 +1,8 @@
 /* https://www.w3schools.com/howto/howto_css_two_columns.asp */
 /* https://developer.mozilla.org/es/docs/Web/CSS/box-sizing */
 /* Así definimos el comportamiento de caja para todos los elementos */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -29,15 +31,15 @@ clear: both;
 }
 
 #c1 {
-  background-color:#2874A6;
+  background-color:#0003a7;
   font-family:Arial, Helvetica, sans-serif;
   color:#f0f0f0;
 }
 
 #c2 {
-  background-color:#AED6F1;
+  background-color:#0003a7;
   font-family:Arial, Helvetica, sans-serif;
-  color:#000000;
+  color:#f0f0f0;
   box-sizing: border-box;
 }
 
@@ -51,9 +53,6 @@ img {
   margin-bottom: 0 auto;
 }
 
-
-
-
 /* Estilos para la barra de progreso */
 .barra-progreso {
   height: 20px;
@@ -64,7 +63,7 @@ img {
 
 .nivel {
   height: 100%;
-  background-color: #5B2C6F; /* MORADO */
+  background-color: #7bff00; /* MORADO */
 }
 
 ul.square-list li {
@@ -80,6 +79,19 @@ padding : 0 6px;
 float: left;
 width: 90%;
 }
+
+.boton {
+  max-width: auto;
+  margin: auto;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  font-family: 'Anton';
+  text-align: center;
+  font-size: larger;
+  color: rgb(0, 0, 0);
+}
+
 @media screen and (max-width: 600px) {
   .columna {
     width: 100%;
