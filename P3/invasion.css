@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: 200px 400px 400px 200px;
+    gap: 20px;
+    width: 100%;
+    max-width: 1220px;
+}
+
+.score-container {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinear a la derecha */
+    justify-content: center;
+    padding-right: -10px; /* Añadir espacio a la derecha */
+}
+
+.game-container {
+    grid-column: 2 / 4;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-container {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear a la izquierda */
+    justify-content: center;
+    padding-left: 10px; /* Añadir espacio a la izquierda */
+    margin-left: -20px;
+}
+
+canvas {
+    border: 2px solid white;
+    background-color: #000000;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    max-height: 600px;
+    /* Añadir sombra al terreno de juego */
+    box-shadow: 0 0 20px 5px #00ff00;
+}
+
+.score {
+    font-size: 24px;
+    /* Cambiar color de puntuación a naranja */
+    color: #ff9900;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ff9900;
+    text-align: center;
+    margin-bottom: 20px;
+    /* Añadir sombra al recuadro de puntuación */
+    box-shadow: 0 0 15px 3px #ff9900;
+    min-width: 150px;
+}
+
+.timer {
+    font-size: 24px;
+    /* Cambiar color del contador a magenta */
+    color: #ff00ff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 2px solid #ff00ff;
+    text-align: center;
+    /* Añadir sombra al recuadro del contador */
+    box-shadow: 0 0 15px 3px #ff00ff;
+    min-width: 150px;
+}
+
+/* Estilos mejorados para el botón de pausa */
+.pause-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32); /* Gradiente para el botón */
+    color: white;
+    border: none;
+    border-radius: 50px; /* Botón más redondeado */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Añadir sombra al botón */
+    box-shadow: 0 0 15px 3px #4CAF50, 0 5px 15px rgba(0,0,0,0.3);
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    position: relative;
+    overflow: hidden;
+}
+
+.pause-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.pause-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 5px #4CAF50, 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.pause-button:hover:before {
+    left: 100%;
+}
+
+.pause-button.paused {
+    background: linear-gradient(to bottom, #f44336, #c62828); /* Gradiente para el botón pausado */
+    /* Cambiar sombra cuando está pausado */
+    box-shadow: 0 0 15px 3px #f44336, 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.pause-button.paused:hover {
+    box-shadow: 0 0 20px 5px #f44336, 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Estilos para las explosiones */
+.explosion {
+    position: absolute;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Asegurar que las imágenes de aliens se muestren correctamente */
+/* Añadir esta clase para mejorar la visualización de las imágenes de aliens */
+.alien-img {
+    image-rendering: pixelated; /* Para mejor visualización de pixel art */
+    image-rendering: crisp-edges;
+}
+
+
+@media screen and (max-width: 1220px) {
+    .game-layout {
+        grid-template-columns: 150px 1fr 1fr 150px;
+        gap: 5px;
+    }
+    
+    .score, .timer {
+        font-size: 18px;
+        padding: 8px 15px;
+        min-width: 120px;
+    }
+    
+    .pause-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .game-layout {
+        grid-template-columns: 100px 1fr 1fr 100px;
+    }
+    
+    .score-container {
+        padding-right: 10px;
+    }
+    
+    .timer-container {
+        padding-left: 5px;
+        margin-left:-10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .game-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    .score-container {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 10px;
+        align-items: center;
+        padding-right: 0;
+    }
+    
+    .game-container {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .timer-container {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 10px;
+        align-items: center;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    
+    .score, .timer {
+        width: 80%;
+        margin: 0 auto 10px auto;
+    }
+    
+    .pause-button {
+        grid-column: 1;
+        grid-row: 4;
+        margin: 10px auto;
+    }
+}
+
+@media screen and (max-height: 620px) {
+    canvas {
+        max-height: 90vh;
+    }
+}
