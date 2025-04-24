@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="memory.css">
+    <script src="memory.js" defer></script>
+    <script src="contador.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Juego de Memoria</h1>
+        
+        <div class="controles">
+            <div class="ajustes">
+                <span>Dimensiones:</span>
+                <div class="botones-dimensiones">
+                    <button class="boton-dimension" data-dimension="2">2x2</button>
+                    <button class="boton-dimension" data-dimension="4">4x4</button>
+                    <button class="boton-dimension" data-dimension="6">6x6</button>
+                </div>
+            </div>
+            
+            <div class="estadisticas">
+                <div class="estadistica">
+                    <span>Movimientos:</span>
+                    <span id="movimientos">0</span>
+                </div>
+                <div class="estadistica">
+                    <span>Tiempo:</span>
+                    <span id="tiempo">00:00</span>
+                </div>
+            </div>
+            
+            <div class="botones">
+                <button id="boton-iniciar">Comenzar</button>
+                <button id="boton-reiniciar">Reiniciar</button>
+            </div>
+        </div>
+        
+        <div id="mensaje-resultado" class="mensaje-resultado oculto">
+            <h2>¡Felicidades!</h2>
+            <p>Has completado el memory en <span id="movimientos-finales" class="destacado">0</span> movimientos y <span id="tiempo-final" class="destacado">00:00</span>.</p>
+            <button id="boton-jugar-otra-vez">Jugar de nuevo</button>
+        </div>
+        
+        <div id="tablero" class="tablero"></div>
+    </div>
+</body>
+</html>
