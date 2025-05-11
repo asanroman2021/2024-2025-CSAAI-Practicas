@@ -55,9 +55,6 @@ canvas {
 .glow-text {
     animation: brillante 2s infinite alternate;
 }
-.chase-text {
-    animation: perseguir 2s infinite alternate;
-}
 
 .controls button {
     background: transparent;
