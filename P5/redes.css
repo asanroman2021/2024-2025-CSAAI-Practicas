@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    background-image: url('internet.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;
+}
+
+canvas {
+    border: 1px solid #0066cc;
+    background-color: rgba(230, 245, 255, 0.8); 
+    display: block; 
+    margin: 40px auto 0; 
+    box-shadow: 0 0 15px rgba(0, 102, 204, 0.7);
+}
+
+.controls {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+@keyframes brillante {
+    0% { color: #FFFFFF; } 
+    50% { color: #00BFFF; } /* Azul claro */
+    100% { color: #FFFFFF; } 
+}
+
+@keyframes perseguir {
+    0% {
+        text-shadow: 0 0 10px #FFFFFF; 
+    }
+    50% {
+        text-shadow: 10px 10px 10px #00BFFF; /* Azul claro */
+    }
+    100% {
+        text-shadow: 0 0 10px #FFFFFF; 
+    }
+}
+
+.glow-text {
+    animation: brillante 2s infinite alternate;
+}
+.chase-text {
+    animation: perseguir 2s infinite alternate;
+}
+
+.controls button {
+    background: transparent;
+    color: #FFF;
+    padding: 12px 25px;
+    border: 2px solid #00BFFF;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 18pt;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.controls button:hover {
+    background: rgba(0, 191, 255, 0.2);
+    transform: scale(1.05);
+}
+
+#info {
+    margin-top: 30px;
+    color: #FFF;
+    background-color: rgba(0, 102, 204, 0.5); 
+    padding: 15px; 
+    border-radius: 15px; 
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.7);
+    width: 80%;
+    max-width: 600px;
+}
+
+#info p {
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    color: #e5f2ff; 
+    font-size: 24px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+}
+
+@media only screen and (max-width: 600px) {
+    canvas {
+        width: 90%; 
+        height: auto; 
+    }
+
+    .controls button {
+        font-size: 14pt; 
+        padding: 8px 16px; 
+    }
+
+    #info p {
+        font-size: 16px; 
+    }
+    
+    .buttons-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
